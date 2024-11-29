@@ -4,89 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sillage Organization</title>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <div id="root">
-        <div class="max-w-6xl mx-auto p-6 space-y-6">
-            <!-- Section Vision -->
-            <div class="text-center mb-8">
-                <h1 class="text-4xl font-bold mb-4">Sillage</h1>
-                <p class="text-xl text-gray-600">Organisation & Structure</p>
-            </div>
-
-            <!-- Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Aurad System -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div class="flex items-center py-4">
+                        <span class="font-bold text-2xl text-blue-500">Sillage</span>
                     </div>
-                    <h2 class="text-xl font-bold mb-2">Aurad System</h2>
-                    <p class="text-sm text-gray-600 mb-4">Gestion financière et marketing digital</p>
-                    <ul class="space-y-2 text-sm">
-                        <li>• Gestion financière et budgétaire</li>
-                        <li>• Marketing digital et influence</li>
-                        <li>• Développement e-commerce</li>
-                        <li>• Analyse des performances</li>
-                    </ul>
                 </div>
-
-                <!-- Sylvain Rochette -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-emerald-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-xl font-bold mb-2">Sylvain Rochette</h2>
-                    <p class="text-sm text-gray-600 mb-4">Produit, qualité et fournisseurs</p>
-                    <ul class="space-y-2 text-sm">
-                        <li>• Supervision des gammes de parfums</li>
-                        <li>• Relations fournisseurs</li>
-                        <li>• Contrôle qualité</li>
-                        <li>• Innovation produits</li>
-                    </ul>
-                </div>
-
-                <!-- Sokona Cissé -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-xl font-bold mb-2">Sokona Cissé</h2>
-                    <p class="text-sm text-gray-600 mb-4">Partenariats, stratégie et distribution</p>
-                    <ul class="space-y-2 text-sm">
-                        <li>• Développement des partenariats</li>
-                        <li>• Stratégie de marque</li>
-                        <li>• Supervision distribution</li>
-                        <li>• Expansion réseau</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Gouvernance -->
-            <div class="bg-white p-6 rounded-lg shadow-lg mt-6">
-                <h2 class="text-2xl font-bold mb-4">Gouvernance Collaborative</h2>
-                <div class="space-y-4">
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h3 class="font-semibold mb-2">Sans directeur général</h3>
-                        <p>Gestion collective pour maintenir une équité et une transparence dans les prises de décision.</p>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h3 class="font-semibold mb-2">Responsabilités autonomes</h3>
-                        <p>Chaque associé est maître de ses responsabilités spécifiques tout en collaborant étroitement avec les autres.</p>
-                    </div>
+                <div class="flex items-center space-x-3">
+                    <div id="nav-buttons" class="flex space-x-2"></div>
                 </div>
             </div>
         </div>
+    </nav>
+
+    <div id="root" class="max-w-6xl mx-auto p-6 space-y-6">
+        <!-- Contenu dynamique -->
+        <div id="content" class="space-y-6">
+            <!-- Vision Section -->
+            <section id="vision" class="content-section">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold mb-4">Vision Commune</h1>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700 mb-4">
+                        Nous avançons ensemble sur le projet Sillage, avec une dynamique déjà en place grâce aux contributions de chacun.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-blue-800 mb-2">Nos valeurs fondamentales</h3>
+                        <ul id="values-list" class="space-y-2"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roles Section -->
+            <section id="roles" class="content-section hidden">
+                <h1 class="text-4xl font-bold mb-8 text-center">Rôles & Responsabilités</h1>
+                <div id="associates-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- Gouvernance Section -->
+            <section id="gouvernance" class="content-section hidden">
+                <h1 class="text-4xl font-bold mb-8 text-center">Gouvernance Collaborative</h1>
+                <div class="bg-white p-6 rounded-lg shadow-lg space-y-4"></div>
+            </section>
+
+            <!-- Étapes Section -->
+            <section id="etapes" class="content-section hidden">
+                <h1 class="text-4xl font-bold mb-8 text-center">Prochaines Étapes</h1>
+                <div id="steps-container" class="space-y-4"></div>
+            </section>
+        </div>
     </div>
+
+    <!-- Modal pour les détails -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg max-w-2xl mx-4">
+            <div id="modal-content"></div>
+            <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                Fermer
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
