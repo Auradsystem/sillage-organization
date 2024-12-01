@@ -4,59 +4,72 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('vision');
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav style={{ marginBottom: '20px' }}>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          {['Vision', 'Rôles', 'Gouvernance', 'Étapes'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab.toLowerCase())}
-              style={{
-                padding: '10px 20px',
-                backgroundColor: activeTab === tab.toLowerCase() ? '#2563eb' : '#f3f4f6',
-                color: activeTab === tab.toLowerCase() ? 'white' : 'black',
-                border: 'none',
-                borderRadius: '8px',
-                cursor: 'pointer'
-              }}
-            >
-              {tab}
-            </button>
-          ))}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <h1 className="text-2xl font-bold text-blue-600">Sillage</h1>
+            <nav className="flex space-x-4">
+              {['Vision', 'Rôles', 'Gouvernance', 'Étapes'].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab.toLowerCase())}
+                  className={`px-4 py-2 rounded-lg transition-colors ${
+                    activeTab === tab.toLowerCase()
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-100 hover:bg-gray-200'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </nav>
+          </div>
         </div>
-      </nav>
+      </header>
 
-      {/* Contenu */}
-      <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-        {activeTab === 'vision' && (
-          <div>
-            <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Vision</h1>
-            <p>Notre vision commune pour Sillage</p>
-          </div>
-        )}
+      {/* Contenu principal */}
+      <main className="max-w-6xl mx-auto p-6">
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          {activeTab === 'vision' && (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Vision</h2>
+              <p className="text-gray-600">
+                Notre vision commune pour Sillage est de créer une marque de parfum innovante,
+                basée sur l'excellence et la créativité.
+              </p>
+            </div>
+          )}
 
-        {activeTab === 'rôles' && (
-          <div>
-            <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Rôles</h1>
-            <p>Les rôles au sein de l'organisation</p>
-          </div>
-        )}
+          {activeTab === 'rôles' && (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Rôles</h2>
+              <p className="text-gray-600">
+                Une organisation claire où chaque associé apporte son expertise.
+              </p>
+            </div>
+          )}
 
-        {activeTab === 'gouvernance' && (
-          <div>
-            <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Gouvernance</h1>
-            <p>Notre modèle de gouvernance</p>
-          </div>
-        )}
+          {activeTab === 'gouvernance' && (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Gouvernance</h2>
+              <p className="text-gray-600">
+                Un modèle de gouvernance collaborative et transparente.
+              </p>
+            </div>
+          )}
 
-        {activeTab === 'étapes' && (
-          <div>
-            <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Étapes</h1>
-            <p>Les prochaines étapes du projet</p>
-          </div>
-        )}
-      </div>
+          {activeTab === 'étapes' && (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Étapes</h2>
+              <p className="text-gray-600">
+                Les prochaines étapes clés de notre développement.
+              </p>
+            </div>
+          )}
+        </div>
+      </main>
     </div>
   );
 }
